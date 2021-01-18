@@ -52,14 +52,16 @@ sudo su - concordium
 
 cd $HOME/Documents/concordium-software
 
-Cüzanı import etme ( home/concordium//Documents/concordium-software klasörüne telefondan export ettiğimiz dosyayı winscp ile yükleyelim. Sonra <path/to/exported/file> cüzdan dosya adını bakerAccount yerine ise hesap adınızı yazınız )
+Cüzanı import etme ( home/concordium//Documents/concordium-software klasörüne telefondan export ettiğimiz dosyayı winscp ile yükleyelim. 
+Sonra <path/to/exported/file> cüzdan dosya adını bakerAccount yerine ise hesap adınızı yazınız. Bu işlemde cüzdan şifrenizi kullacaksınız. )
+
 ./concordium-client config account import <path/to/exported/file> --name bakerAccount
  
 Key dosyası oluşturma (<keys-file> isim ver)
 ./concordium-client baker generate-keys <keys-file>.json
 
 
-Baker kaydı (<keys-file> yerine yukarıda isim verdiğimiz key adı , bakerAccount yerine hesap adımız , <amountToStake> stake miktarı giriniz ör:1000, 1200  
+Baker kaydı (<keys-file> yerine yukarıda isim verdiğimiz key adı , bakerAccount yerine hesap adımız , <amountToStake> stake miktarı giriniz ör:1000, 1200 . Bu işlemde cüzdan şifrenizi kullacaksınız  
 
 ./concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amountToStake> --out ~/.local/share/concordium/baker-credentials.json
 
