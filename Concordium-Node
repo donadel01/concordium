@@ -1,1 +1,88 @@
+sudo adduser concordium
+
+sudo visudo
+root    ALL=(ALL:ALL) ALL 
+altına bu satırı ekle 
+concordium ALL=(ALL:ALL) ALL
+
+CTRL+O enter CTRL+X
+
+sudo usermod -a -G sudo concordium
+
+sudo su - concordium
+
+sudo apt update && sudo apt upgrade
+
+sudo apt install docker.io curl -y \
+&& sudo systemctl start docker \
+&& sudo systemctl enable docker
+
+sudo usermod -aG docker $USER
+
+newgrp docker
+
+
+
+//Dosyaları indiriyoruz
+wget https://client-distribution-testnet.concordium.com/concordium-software-linux_0.4.8-0.tar.gz
+
+//Dosyaları çıkarıyoruz
+tar -xvf concordium-software-linux_0.4.8-0.tar.gz
+
+//Dosyaları olması gereken foldere taşıyoruz
+mkdir Documents
+
+mv concordium-software $HOME/Documents/concordium-software
+
+//Taşıdığımız klasöre giriyoruz
+cd $HOME/Documents/concordium-software
+
+//Portları açıyoruz
+sudo ufw allow 8888
+sudo ufw allow 8082
+sudo ufw allow 10000
+
+./concordium-node çalıştırılıp node ismi girilerek senkronizasyon başlatılıyor.
+
+
+
+Senkronizasyon bitince 2. bir Putty açarak
+
+sudo su - concordium
+
+cd $HOME/Documents/concordium-software
+
+Cüzanı import etme ( home/concordium//Documents/concordium-software klasörüne telefondan export ettiğimiz dosyayı winscp ile yükleyelim. 
+Sonra <path/to/exported/file> cüzdan dosya adını bakerAccount yerine ise hesap adınızı yazınız. Bu işlemde cüzdan şifrenizi kullacaksınız. )
+
+./concordium-client config account import <path/to/exported/file> --name bakerAccount
+ 
+Key dosyası oluşturma (<keys-file> isim ver)
+./concordium-client baker generate-keys <keys-file>.json
+
+
+Baker kaydı (<keys-file> yerine yukarıda isim verdiğimiz key adı , bakerAccount yerine hesap adımız , <amountToStake> stake miktarı giriniz ör:1000, 1200 . Bu işlemde cüzdan şifrenizi kullacaksınız  
+
+./concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amountToStake> --out ~/.local/share/concordium/baker-credentials.json
+
+Bu işlemi yaptıktan sonra ./concordium-node-stop kodu ile durdurup ./concordium-node ile tekrar başlatmamız gerekiyor.
+
+
+
+
+Rust Kurulumu
+
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+source $HOME/.cargo/env
+
+rustup target add wasm32-unknown-unknown
+
+cp cargo-concordium $HOME/.cargo/bin
+
+
+Test Ediyoruz
+
+cargo concordium --help  
 
