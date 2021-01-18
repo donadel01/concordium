@@ -66,6 +66,7 @@ Baker kaydı (<keys-file> yerine yukarıda isim verdiğimiz key adı , bakerAcco
 ./concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amountToStake> --out ~/.local/share/concordium/baker-credentials.json
 
 Bu işlemi yaptıktan sonra ./concordium-node-stop kodu ile durdurup ./concordium-node ile tekrar başlatmamız gerekiyor.
+Başlattığımızda tekrar isim yazdığımız kısım gelecek burada direk enter yapalım. Y/N kısmı geldiğinde N yapıp devam edelim.
 
 
 
