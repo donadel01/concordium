@@ -13,9 +13,9 @@ sudo su - concordium
 
 sudo apt update && sudo apt upgrade
 
-sudo apt install docker.io curl -y \
-&& sudo systemctl start docker \
-&& sudo systemctl enable docker
+sudo apt install docker.io curl -y
+sudo systemctl start docker
+sudo systemctl enable docker
 
 sudo usermod -aG docker $USER
 
