@@ -80,6 +80,8 @@ source $HOME/.cargo/env
 
 rustup target add wasm32-unknown-unknown
 
+cd ~/Documents/concordium-software/
+
 cp cargo-concordium $HOME/.cargo/bin
 
 
