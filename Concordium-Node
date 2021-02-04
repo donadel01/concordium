@@ -46,7 +46,6 @@ tar -xvf concordium-software-linux_0.4.8-0.tar.gz
 
 //Dosyaları olması gereken foldere taşıyoruz
 mkdir Documents
-
 mv concordium-software $HOME/Documents/concordium-software
 
 //Taşıdığımız klasöre giriyoruz
@@ -95,7 +94,7 @@ sudo chmod +x retrieve_minified_logs-linux-v1
 //log çıktı alma işlemi başlatıyoruz. Bu biraz zaman alabilir.
 ./retrieve_minified_logs-linux-v1
 
-log dosyasını WinSCP programı veya benzeri programlarla bağlanıp /home/concordium/Documents/concordium-software dosyayolundan indirebilirsiniz.
+log dosyasını WinSCP programı veya benzeri programlarla bağlanıp /home/concordium/Documents/concordium-software dosyayolundan indirebilirsiniz.Özet log olup görev bildirimlerinde kullanılır.
 
 
 
