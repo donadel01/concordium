@@ -1,24 +1,31 @@
+Concordium Node Kurulumu
+
+//User açıyoruz
 sudo adduser concordium
 
+//Usere yetki veriyoruz
 sudo visudo
 root    ALL=(ALL:ALL) ALL 
 altına bu satırı ekle 
 concordium ALL=(ALL:ALL) ALL
-
 CTRL+O enter CTRL+X
 
+//Usere yetki veriyoruz
 sudo usermod -a -G sudo concordium
 
+//Usere giriyoruz.
 sudo su - concordium
 
+//Repoları güncelliyoruz.
 sudo apt update && sudo apt upgrade
 
+//docker kurulumu
 sudo apt install docker.io curl -y
 sudo systemctl start docker
 sudo systemctl enable docker
 
+//Yetki veriyoruz
 sudo usermod -aG docker $USER
-
 newgrp docker
 
 
