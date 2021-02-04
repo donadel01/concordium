@@ -115,4 +115,21 @@ cp cargo-concordium $HOME/.cargo/bin
 Test Ediyoruz
 
 cargo concordium --help  
+Aşşağıdaki çıktıyı alıyorsunuz başarılı şekilde yüklediniz demektir.
+Çıktı:
 
+cargo-concordium 0.2.0
+Smart contract development tool for building, testing and deploying.
+
+USAGE:
+    cargo concordium <SUBCOMMAND>
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+SUBCOMMANDS:
+    build    Build a deployment ready smart-contract module.
+    help     Prints this message or the help of the given subcommand(s)
+    run      Locally simulate invocation method of a smart contract and inspect the state.
+    test     Build and run tests using a Wasm interpreter.
