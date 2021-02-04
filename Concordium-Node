@@ -84,6 +84,19 @@ Bu işlemi yaptıktan sonra ./concordium-node-stop kodu ile durdurup ./concordiu
 Başlattığımızda tekrar isim yazdığımız kısım gelecek burada direk enter yapalım. Y/N kısmı geldiğinde N yapıp devam edelim.
 
 
+Log Alma 
+
+//Dosyayı indiriyoruz
+wget https://client-distribution-testnet.concordium.com/retrieve_minified_logs-linux-v1
+
+//Dosyaya yazma yetkisi veriyoruz.
+sudo chmod +x retrieve_minified_logs-linux-v1
+
+//log çıktı alma işlemi başlatıyoruz. Bu biraz zaman alabilir.
+./retrieve_minified_logs-linux-v1
+
+log dosyasını WinSCP programı veya benzeri programlarla bağlanıp /home/concordium/Documents/concordium-software dosyayolundan indirebilirsiniz.
+
 
 
 Rust Kurulumu
