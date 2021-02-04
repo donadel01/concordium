@@ -1,3 +1,11 @@
+Cüzdan Kurulumu
+
+https://developers.concordium.com/en/testnet4/testnet/guides/get-the-app.html adresine girerek Mobil cihazınıza uygun uygulamayı indiriniz.Kurulum yaptığınız uygulamayı açarak
+önce kimlik daha sonrada hesap açıyoruz.Açtığımız hesapta Request 100 Gtu tıklayarak hesabımıza GTU alıyoruz(Hesabımıza 2000 GTU veriliyor).Bu işlemler bittikten sonra
+uygulamanın more kısmından exporta tıklayarak cüzdanımızı dışa aktarıyoruz.Aktarım sırasında şifre oluşturuyoruz bu şifreyi unutmayınız. Dışa aktardığımız bu cüzdanı baker ekleme
+ve transfer işlemleri için kullanacağız.
+
+
 Concordium Node Kurulumu
 
 //User açıyoruz
